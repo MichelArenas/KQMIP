@@ -1,0 +1,22 @@
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Original creado.
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Original:
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Candidato creado.
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Subsistema creado.
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Iniciando análisis GeoMIP.
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Nivel 1: 14 estados procesados.
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Nivel 2: 91 estados procesados.
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Nivel 3: 364 estados procesados.
+2026-05-18 02:59:55 [sia_preparation] CRITICAL Process-24: Nivel 4: 1001 estados procesados.
+2026-05-18 02:59:56 [sia_preparation] CRITICAL Process-24: Nivel 5: 2002 estados procesados.
+2026-05-18 02:59:57 [sia_preparation] CRITICAL Process-24: Nivel 6: 3003 estados procesados.
+2026-05-18 02:59:58 [sia_preparation] CRITICAL Process-24: Nivel 7: 3432 estados procesados.
+2026-05-18 03:00:00 [sia_preparation] CRITICAL Process-24: Nivel 8: 3003 estados procesados.
+2026-05-18 03:00:01 [sia_preparation] CRITICAL Process-24: Nivel 9: 2002 estados procesados.
+2026-05-18 03:00:02 [sia_preparation] CRITICAL Process-24: Nivel 10: 1001 estados procesados.
+2026-05-18 03:00:03 [sia_preparation] CRITICAL Process-24: Nivel 11: 364 estados procesados.
+2026-05-18 03:00:03 [sia_preparation] CRITICAL Process-24: Nivel 12: 91 estados procesados.
+2026-05-18 03:00:03 [sia_preparation] CRITICAL Process-24: Nivel 13: 14 estados procesados.
+2026-05-18 03:00:03 [sia_preparation] CRITICAL Process-24: Nivel 14: 1 estados procesados.
+2026-05-18 03:00:03 [sia_preparation] CRITICAL Process-24: Tabla T completa. Identificando candidatos...
+2026-05-18 03:00:03 [sia_preparation] CRITICAL Process-24: Candidatos generados: 42
+2026-05-18 03:00:03 [sia_preparation] CRITICAL Process-24: Evaluando candidato 1/42...

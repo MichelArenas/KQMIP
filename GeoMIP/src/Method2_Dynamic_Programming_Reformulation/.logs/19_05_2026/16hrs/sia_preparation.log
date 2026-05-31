@@ -1,0 +1,23 @@
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Original creado.
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Original:
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Candidato creado.
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Subsistema creado.
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Iniciando análisis GeoMIP.
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Nivel 1: 15 estados procesados.
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Nivel 2: 105 estados procesados.
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Nivel 3: 455 estados procesados.
+2026-05-19 16:59:45 [sia_preparation] CRITICAL Process-15: Nivel 4: 1365 estados procesados.
+2026-05-19 16:59:46 [sia_preparation] CRITICAL Process-15: Nivel 5: 3003 estados procesados.
+2026-05-19 16:59:48 [sia_preparation] CRITICAL Process-15: Nivel 6: 5005 estados procesados.
+2026-05-19 16:59:51 [sia_preparation] CRITICAL Process-15: Nivel 7: 6435 estados procesados.
+2026-05-19 16:59:55 [sia_preparation] CRITICAL Process-15: Nivel 8: 6435 estados procesados.
+2026-05-19 16:59:58 [sia_preparation] CRITICAL Process-15: Nivel 9: 5005 estados procesados.
+2026-05-19 17:00:01 [sia_preparation] CRITICAL Process-15: Nivel 10: 3003 estados procesados.
+2026-05-19 17:00:02 [sia_preparation] CRITICAL Process-15: Nivel 11: 1365 estados procesados.
+2026-05-19 17:00:03 [sia_preparation] CRITICAL Process-15: Nivel 12: 455 estados procesados.
+2026-05-19 17:00:03 [sia_preparation] CRITICAL Process-15: Nivel 13: 105 estados procesados.
+2026-05-19 17:00:03 [sia_preparation] CRITICAL Process-15: Nivel 14: 15 estados procesados.
+2026-05-19 17:00:03 [sia_preparation] CRITICAL Process-15: Nivel 15: 1 estados procesados.
+2026-05-19 17:00:03 [sia_preparation] CRITICAL Process-15: Tabla T completa. Identificando candidatos...
+2026-05-19 17:00:03 [sia_preparation] CRITICAL Process-15: Candidatos generados: 33
+2026-05-19 17:00:03 [sia_preparation] CRITICAL Process-15: Evaluando candidato 1/33...

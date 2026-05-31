@@ -245,6 +245,68 @@ class System:
         )
         return new_sys
 
+    def kpartir(
+        self,
+        grupos: list[tuple],
+    ) -> "System":
+        """
+        Genera una k-partición del sistema dados k pares (F_j, M_j).
+
+        Extensión de bipartir() para k ≥ 2 grupos, implementada para el
+        proyecto K-QGMIP (Universidad de Caldas, 2026-1).
+
+        Cada grupo Gⱼ se define por:
+            F_j (NDArray[np.int8]): índices de variables futuras (NCubos).
+            M_j (NDArray[np.int8]): índices de variables presentes (dims).
+
+        Para cada NCubo cuyo índice ∈ F_j:
+            marginalizar(cube.dims − M_j)   → conserva solo M_j.
+
+        Esto independiza estadísticamente los k factores del producto
+        tensorial P(S₁|S₁ₜ) ⊗ ... ⊗ P(Sₖ|Sₖₜ).
+
+        Args:
+        ----
+            grupos (list[tuple]):
+                Lista de k pares (F_j, M_j), donde:
+                    F_j (array-like de int): índices de futuras del grupo j.
+                    M_j (array-like de int): índices de presentes del grupo j.
+
+        Returns:
+        -------
+            System: Sistema que representa la k-partición completa.
+
+        Raises:
+        ------
+            ValueError: Si algún NCubo no está cubierto por ningún grupo.
+        """
+        nuevo = System.__new__(System)
+        nuevo.estado_inicial = self.estado_inicial
+
+        # Construir mapa: índice_ncubo → M_j de su grupo
+        mapa_mecanismo: dict[int, np.ndarray] = {}
+        for f_j, m_j in grupos:
+            for idx in np.asarray(f_j, dtype=np.int8):
+                mapa_mecanismo[int(idx)] = np.asarray(m_j, dtype=np.int8)
+
+        # Validar cobertura total
+        for cubo in self.ncubos:
+            if cubo.indice not in mapa_mecanismo:
+                raise ValueError(
+                    f"NCubo {cubo.indice} no pertenece a ningún grupo. "
+                    f"Verifica que F_1 ∪ ... ∪ F_k cubra todos los índices."
+                )
+
+        # Marginalizar cada NCubo según el M_j de su grupo
+        nuevo.ncubos = tuple(
+            cubo.marginalizar(
+                np.setdiff1d(cubo.dims, mapa_mecanismo[cubo.indice])
+            )
+            for cubo in self.ncubos
+        )
+        return nuevo
+
+
     def distribucion_marginal(self):
         """
         Partiendo de idealmente un subsistema o una bipartición como entrada, se seleccionana los nodos/elementos cuando su estado es OFF o inactivo para cada uno de ellos, mediante la propiedad de las distribuciones marginales, esto nos permite calcular más eficientemente la EMD-Effect, logrando así determinar un coste para dar comparación entre idealmente, un sub-sistema y una bipartición. Hemos de aplicar una reversión en la selección del estado inicial puesto

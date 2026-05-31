@@ -1,0 +1,21 @@
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Original creado.
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Original:
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Candidato creado.
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Subsistema creado.
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Iniciando análisis GeoMIP.
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Nivel 1: 15 estados procesados.
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Nivel 2: 105 estados procesados.
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Nivel 3: 455 estados procesados.
+2026-05-18 00:46:02 [sia_preparation] CRITICAL Process-1: Nivel 4: 1365 estados procesados.
+2026-05-18 00:46:04 [sia_preparation] CRITICAL Process-1: Nivel 5: 3003 estados procesados.
+2026-05-18 00:46:07 [sia_preparation] CRITICAL Process-1: Nivel 6: 5005 estados procesados.
+2026-05-18 00:46:11 [sia_preparation] CRITICAL Process-1: Nivel 7: 6435 estados procesados.
+2026-05-18 00:46:15 [sia_preparation] CRITICAL Process-1: Nivel 8: 6435 estados procesados.
+2026-05-18 00:46:20 [sia_preparation] CRITICAL Process-1: Nivel 9: 5005 estados procesados.
+2026-05-18 00:46:23 [sia_preparation] CRITICAL Process-1: Nivel 10: 3003 estados procesados.
+2026-05-18 00:46:25 [sia_preparation] CRITICAL Process-1: Nivel 11: 1365 estados procesados.
+2026-05-18 00:46:26 [sia_preparation] CRITICAL Process-1: Nivel 12: 455 estados procesados.
+2026-05-18 00:46:26 [sia_preparation] CRITICAL Process-1: Nivel 13: 105 estados procesados.
+2026-05-18 00:46:26 [sia_preparation] CRITICAL Process-1: Nivel 14: 15 estados procesados.
+2026-05-18 00:46:26 [sia_preparation] CRITICAL Process-1: Nivel 15: 1 estados procesados.
+2026-05-18 00:46:26 [sia_preparation] CRITICAL Process-1: Tabla T completa. Identificando candidatos...

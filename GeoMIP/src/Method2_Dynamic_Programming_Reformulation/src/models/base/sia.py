@@ -58,8 +58,12 @@ class SIA(ABC):
         condicion: str,
         alcance: str,
         mecanismo: str,
-        tpm: np.ndarray #! COMENTAR PARA UN SOLO ESTADO INICIAL
+        tpm: np.ndarray = None #! COMENTAR PARA UN SOLO ESTADO INICIAL
     ):
+         # Dentro del método:
+        if tpm is None:
+            tpm = self.sia_cargar_tpm()   # o como cargues la TPM originalmente
+
         """Es en este método donde dada la entrada del usuario, vamos a generar un sistema completo, aplicamos condiciones de fondo (background conditions), loe substraemos partes para dejar un subsistema y es este el que retornamos pues este es el mínimo "sistema" útil para poder encontrar la bipartición que le genere la menor pérdida.
 
         Args:

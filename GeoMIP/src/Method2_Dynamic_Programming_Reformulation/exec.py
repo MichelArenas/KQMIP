@@ -1,12 +1,13 @@
 from src.models.base.application import aplicacion
 from src.main import iniciar
+from src.controllers.strategies.geometric import GeometricSIA
 
 
 def main():
     """Inicializar el aplicativo."""
 
     aplicacion.profiler_habilitado = True
-    # aplicacion.pagina_sample_network = "B"
+    #aplicacion.pagina_sample_network = "B"
 
     iniciar()
 

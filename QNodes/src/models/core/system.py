@@ -1,5 +1,6 @@
 import numpy as np
 from numpy.typing import NDArray
+from typing import List, Tuple
 
 from src.constants.base import BASE_TWO, COLS_IDX, INT_ZERO
 from src.constants.error import ERROR_ESPACIOS_INCOMPATIBLES
@@ -264,6 +265,108 @@ class System:
         nuevo_sistema.ncubos = self.memo[clave]
 
         return nuevo_sistema
+    
+    def kpartir(
+        self,
+        grupos: list[tuple[NDArray[np.int8], NDArray[np.int8]]],
+    ) -> "System":
+        """
+        Genera una k-partición del subsistema actual a partir de k grupos explícitos.
+
+        Generalización de `bipartir()` para k ≥ 2 grupos. Mientras `bipartir()` opera
+        sobre exactamente 2 grupos de forma implícita (alcance y su complemento),
+        `kpartir()` recibe k pares (F_j, M_j) de forma explícita, donde:
+
+            - F_j: índices de los NCubos futuros que pertenecen al grupo j.
+            - M_j: dimensiones presentes que actúan como mecanismo del grupo j.
+
+        Principio matemático:
+        ---------------------
+        Para cada NCubo i que pertenece al grupo j, se marginalizan todas las
+        dimensiones presentes que NO están en M_j, dejando el cubo condicionado
+        únicamente a las variables de su propio grupo. El resultado es el producto
+        tensorial:
+
+            P(S1_t+1 | S1_t) ⊗ P(S2_t+1 | S2_t) ⊗ ... ⊗ P(Sk_t+1 | Sk_t)
+
+        Invariante con bipartir():
+        --------------------------
+        Para k=2, `kpartir([(alcance, mecanismo), (complemento_F, complemento_M)])`
+        produce exactamente el mismo resultado que `bipartir(alcance, mecanismo)`.
+
+        Args:
+        ----
+            grupos (list[tuple[NDArray[np.int8], NDArray[np.int8]]]):
+                Lista de k pares (F_j, M_j). Se requiere que:
+                - Los F_j sean disjuntos y cubran todos los índices del subsistema.
+                - Los M_j sean disjuntos y cubran todas las dims del subsistema.
+
+        Returns:
+        -------
+            System: El sistema k-partido, listo para calcular su distribución
+                marginal y comparar con el subsistema original mediante EMD.
+
+        Raises:
+        ------
+            ValueError: Si algún índice de NCubo no aparece en ningún F_j,
+                indicando una partición incompleta o con solapamiento.
+
+        Example:
+        -------
+        >>> # Sistema {A, B, C}, k=3: cada variable en su propio grupo
+        >>> grupos = [
+        ...     (np.array([0], dtype=np.int8), np.array([0], dtype=np.int8)),  # A | a
+        ...     (np.array([1], dtype=np.int8), np.array([1], dtype=np.int8)),  # B | b
+        ...     (np.array([2], dtype=np.int8), np.array([2], dtype=np.int8)),  # C | c
+        ... ]
+        >>> k_particion = subsistema.kpartir(grupos)
+        >>> # Resultado: P(A|a) ⊗ P(B|b) ⊗ P(C|c)
+        >>> perdida = emd_efecto(k_particion.distribucion_marginal(), subsistema.distribucion_marginal())
+
+        >>> # k=2 equivalente a bipartir(alcance=[0,1], mecanismo=[0,1]):
+        >>> grupos_2 = [
+        ...     (np.array([0, 1], dtype=np.int8), np.array([0, 1], dtype=np.int8)),
+        ...     (np.array([2],    dtype=np.int8), np.array([2],    dtype=np.int8)),
+        ... ]
+        >>> k_particion_2 = subsistema.kpartir(grupos_2)
+        >>> # Resultado idéntico a bipartir(): P(A|a,b) ⊗ P(B|a,b) ⊗ P(C|c)
+        """
+        nuevo_sistema = System.__new__(System)
+        nuevo_sistema.estado_inicial = self.estado_inicial
+        nuevo_sistema.memo = self.memo
+
+        # Clave de memotización generalizada: tupla de k pares (F_j, M_j) ordenados
+        clave = tuple(
+            (tuple(sorted(f_j.tolist())), tuple(sorted(m_j.tolist())))
+            for f_j, m_j in grupos
+        )
+
+        if clave not in self.memo:
+            # Paso 1: construir mapa_mecanismo — índice de NCubo → M_j de su grupo
+            mapa_mecanismo: dict[int, NDArray[np.int8]] = {}
+            for f_j, m_j in grupos:
+                for idx in f_j:
+                    mapa_mecanismo[int(idx)] = m_j
+
+            # Paso 2: validar cobertura — todo NCubo debe tener un grupo asignado
+            for cubo in self.ncubos:
+                if cubo.indice not in mapa_mecanismo:
+                    raise ValueError(
+                        f"El NCubo con índice {cubo.indice} no pertenece a ningún "
+                        f"grupo. Verifique que los F_j cubran todos los índices del subsistema."
+                    )
+
+            # Paso 3: transformar cada NCubo marginalizando dims fuera de su M_j
+            # Operación: marginalizar(cubo.dims − M_j)  →  P(X_i | M_j)
+            self.memo[clave] = tuple(
+                cubo.marginalizar(
+                    np.setdiff1d(cubo.dims, mapa_mecanismo[cubo.indice])
+                )
+                for cubo in self.ncubos
+            )
+
+        nuevo_sistema.ncubos = self.memo[clave]
+        return nuevo_sistema
 
     def distribucion_marginal(self):
         """
@@ -291,3 +394,5 @@ class System:
             f"\nInitial state: {self.estado_inicial}"
             f"\nNCubes:\n" + "\n".join(cubos_info)
         )
+
+    

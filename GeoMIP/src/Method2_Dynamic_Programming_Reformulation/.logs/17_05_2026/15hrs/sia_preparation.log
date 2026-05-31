@@ -1,0 +1,13 @@
+2026-05-17 15:30:20 [sia_preparation] CRITICAL Process-1: Original creado.
+2026-05-17 15:30:20 [sia_preparation] CRITICAL Process-1: Original:
+2026-05-17 15:30:20 [sia_preparation] CRITICAL Process-1: Candidato creado.
+2026-05-17 15:30:20 [sia_preparation] CRITICAL Process-1: Subsistema creado.
+2026-05-17 15:30:20 [sia_preparation] CRITICAL Process-1: Iniciando análisis multivariante GeoMIP (K=[2..5]).
+2026-05-17 15:30:20 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 1: 15 estados y 15 transiciones aseguradas en la malla.
+2026-05-17 15:30:20 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 2: 105 estados y 105 transiciones aseguradas en la malla.
+2026-05-17 15:30:21 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 3: 455 estados y 455 transiciones aseguradas en la malla.
+2026-05-17 15:30:25 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 4: 1365 estados y 1365 transiciones aseguradas en la malla.
+2026-05-17 15:30:54 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 5: 3003 estados y 3003 transiciones aseguradas en la malla.
+2026-05-17 15:33:02 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 6: 5005 estados y 5005 transiciones aseguradas en la malla.
+2026-05-17 15:39:24 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 7: 6435 estados y 6435 transiciones aseguradas en la malla.
+2026-05-17 16:29:05 [sia_preparation] CRITICAL Process-1: Topología Acotada - Nivel 8: 6435 estados y 6435 transiciones aseguradas en la malla.

@@ -1,18 +1,18 @@
-# from src.controllers.manager import Manager
+#from src.controllers.manager import Manager
 
-# from src.controllers.strategies.force import BruteForce
-# from src.controllers.strategies.q_nodes import QNodes
-# from src.controllers.strategies.geometric import GeometricSIA
+#from src.controllers.strategies.force import BruteForce
+#from src.controllers.strategies.q_nodes import QNodes
+#from src.controllers.strategies.geometric import GeometricSIA
 
 
-# def iniciar():
+#def iniciar():
 #     """Punto de entrada principal"""
 #                     # ABCD #
-#     # estado_inicial = "100"
-#     # condiciones =    "111"
-#     # alcance =        "111"
-#     # mecanismo =      "111"
-#     # estado_inicial = "0000"
+#      estado_inicial = "100"
+ #     condiciones =    "111"
+  #    alcance =        "111"
+   #   mecanismo =      "111"
+#      estado_inicial = "0000"
 #     # condiciones =    "1111"
 #     # alcance =        "1111"
 #     # mecanismo =      "1111"
@@ -44,28 +44,26 @@
 #     # condiciones =    "1111111111"
 #     # alcance =        "1111111110"
 #     # mecanismo =      "1111111111"
-#     # estado_inicial = "10000000000000000000"
-#     # condiciones =    "11111111111111111111"
-#     # alcance =        "11111111111111111111"
-#     # mecanismo =      "11111111111111111111"
-#     # estado_inicial = "10000000000000000000"
-#     # condiciones =    "11111111111111111111"
-#     # alcance =        "11011011011011011011"
-#     # mecanismo =      "10101010101010101010"
+#      estado_inicial = "100000000000000"
+#      condiciones =    "111111111111111"
+#      alcance =        "111111111111111"
+#      mecanismo =      "111111111111111"
+#      estado_inicial = "10000000000000000000"
+#      condiciones =    "11111111111111111111"
+#      alcance =        "11011011011011011011"
+#      mecanismo =      "10101010101010101010"
 
-#     gestor_sistema = Manager(estado_inicial)
+#      gestor_sistema = Manager(estado_inicial)
 
 #     ### Ejemplo de solución mediante módulo de fuerza bruta ###
-#     analizador_fb = GeometricSIA(gestor_sistema)
-#     # analizador_fb = BruteForce(gestor_sistema)
-#     sia_uno = analizador_fb.aplicar_estrategia(
+#      analizador_fb = GeometricSIA(gestor_sistema)
+#      analizador_fb = BruteForce(gestor_sistema)
+#      sia_uno = analizador_fb.aplicar_estrategia(
 #         condiciones,
 #         alcance,
-#         mecanismo,
-#     )
-#     print(sia_uno)
-
-
+#        mecanismo,
+#    )
+#      print(sia_uno)
 from src.controllers.manager import Manager
 from src.controllers.strategies.geometric import GeometricSIA
 from src.controllers.strategies.q_nodes import QNodes
@@ -159,7 +157,7 @@ def ejecutar_desde_excel(
     estado_inicio: str | None = None,
     condiciones: str | None = None,
 ):
-    df = pd.read_excel(ruta_excel, sheet_name=8, usecols="B", skiprows=3, names=["Subsistema"]) #! here
+    df = pd.read_excel(ruta_excel, sheet_name=5, usecols="B", skiprows=3, names=["Subsistema"]) #! here
     filas = df["Subsistema"].dropna().tolist()
     filas = filas[inicio:inicio + cantidad]
     resultados = []

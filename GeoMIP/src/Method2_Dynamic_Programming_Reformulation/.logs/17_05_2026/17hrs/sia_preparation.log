@@ -1,0 +1,20 @@
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Original creado.
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Original:
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Candidato creado.
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Subsistema creado.
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Iniciando análisis multivariante GeoMIP (K=[2..5]).
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 1: 15 estados y 15 transiciones aseguradas en la malla.
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 2: 105 estados y 105 transiciones aseguradas en la malla.
+2026-05-17 17:37:11 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 3: 455 estados y 455 transiciones aseguradas en la malla.
+2026-05-17 17:37:17 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 4: 1365 estados y 1365 transiciones aseguradas en la malla.
+2026-05-17 17:37:46 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 5: 3003 estados y 3003 transiciones aseguradas en la malla.
+2026-05-17 17:39:48 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 6: 5005 estados y 5005 transiciones aseguradas en la malla.
+2026-05-17 17:45:23 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 7: 6435 estados y 6435 transiciones aseguradas en la malla.
+2026-05-17 17:54:50 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 8: 6435 estados y 6435 transiciones aseguradas en la malla.
+2026-05-17 18:03:02 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 9: 5005 estados y 5005 transiciones aseguradas en la malla.
+2026-05-17 18:06:38 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 10: 3003 estados y 3003 transiciones aseguradas en la malla.
+2026-05-17 18:07:36 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 11: 1365 estados y 1365 transiciones aseguradas en la malla.
+2026-05-17 18:07:46 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 12: 455 estados y 455 transiciones aseguradas en la malla.
+2026-05-17 18:07:47 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 13: 105 estados y 105 transiciones aseguradas en la malla.
+2026-05-17 18:07:47 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 14: 15 estados y 15 transiciones aseguradas en la malla.
+2026-05-17 18:07:47 [sia_preparation] CRITICAL Process-2: Topología Acotada - Nivel 15: 1 estados y 1 transiciones aseguradas en la malla.

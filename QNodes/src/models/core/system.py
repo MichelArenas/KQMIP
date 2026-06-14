@@ -375,6 +375,7 @@ class System:
         Returns:
             NDArray[np.float32]: Este arreglo contiene cada elemento/variable de forma ordenada y consecutiva seleccionado específicamente en la clave formada por el estado inicial.
         """
+        print("ENTRÉ A distribucion_marginal", flush=True)
         probabilidad: float
         distribucion = np.empty(self.indices_ncubos.size, dtype=np.float32)
 

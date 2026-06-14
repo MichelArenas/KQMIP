@@ -29,6 +29,7 @@ from src.models.base.application import aplicacion
 
 PARTICION_Q_LABEL = "ParticionQ"
 PARTICION_Q_TAG   = "particion_q_strategy"
+UMBRAL_EXHAUSTIVO: int = 7  # S(7,5)=140 max → exhaustivo y rápido; greedy para M>7
 
 
 class ParticionadorQ(SIA):
@@ -114,13 +115,27 @@ class ParticionadorQ(SIA):
         self, vertices: List[Tuple[int, int]], k: int
     ) -> Tuple[List[tuple], float, NDArray]:
         """
-        Ejecuta k-1 fases de peeling greedy.
+        Para M ≤ UMBRAL_EXHAUSTIVO: evalúa TODAS las k-particiones de los futuros
+        (número de Stirling S(M,k)) y elige la de menor φ — óptimo global.
+        Para M > UMBRAL_EXHAUSTIVO: ejecuta k-1 fases de peeling greedy.
         Retorna (lista_de_grupos, perdida_final, distribucion_final).
         """
+        self._logger.critic(
+            f"[ParticionadorQ] Iniciado | k={k} | M={self._m} futuros | N={self._n} presentes"
+        )
+
+        if self._m <= UMBRAL_EXHAUSTIVO:
+            self._logger.critic(
+                f"[ParticionadorQ] → Modo EXHAUSTIVO (M={self._m} ≤ {UMBRAL_EXHAUSTIVO})"
+            )
+            return self._algoritmo_exhaustivo(k)
+
+        # ── Modo greedy peeling ──────────────────────────────────────────────
+        self._logger.critic(
+            f"[ParticionadorQ] → Modo GREEDY (M={self._m} > {UMBRAL_EXHAUSTIVO})"
+        )
         fijos: List[tuple] = []
         restantes = list(vertices)
-
-        self._logger.critic(f"[ParticionadorQ] Iniciado | k={k} | vértices={len(vertices)}")
 
         for fase in range(k - 1):
             self._logger.critic(f"  Fase {fase+1}/{k-1} | restantes={len(restantes)}")
@@ -130,13 +145,10 @@ class ParticionadorQ(SIA):
                 restantes = []
                 break
 
-            # Cuántos vértices puede tomar este grupo como máximo
             max_tam = self._calcular_maximo_tam_grupo(len(restantes), fase, k)
-
             mejor = self._busqueda_greedy(restantes, fijos, max_tam)
             fijos.append(mejor)
 
-            # Eliminar los vértices asignados
             usados = set(self._aplanar(mejor))
             restantes = [v for v in restantes if v not in usados]
 
@@ -291,6 +303,115 @@ class ParticionadorQ(SIA):
                 resultado.append(par_cola)
 
         return resultado
+
+    # --------------------------------------------------------------
+    # Búsqueda exhaustiva por número de Stirling (M ≤ UMBRAL_EXHAUSTIVO)
+    # --------------------------------------------------------------
+    def _algoritmo_exhaustivo(self, k: int) -> Tuple[List[tuple], float, NDArray]:
+        """
+        Evalúa TODAS las k-particiones de las M variables futuras (S(M,k) de Stirling).
+        Para cada partición de futuros, asigna las N presentes por proximidad de índice
+        y evalúa φ con kpartir(). Retorna la tripleta de menor φ.
+        """
+        pos_futuros = list(range(self._m))
+        pos_presentes = list(range(self._n))
+
+        todas_particiones = self._generar_k_particiones_indices(pos_futuros, k)
+        self._logger.critic(
+            f"[Exhaustivo] S({self._m},{k}) = {len(todas_particiones)} candidatos a evaluar"
+        )
+
+        mejor_perdida: float = INFTY_POS
+        mejor_dist: Optional[NDArray] = None
+        mejor_grupos: Optional[List[tuple]] = None
+
+        for particion_futuros in todas_particiones:
+            presentes_por_grupo = self._asignar_presentes_a_grupos(
+                particion_futuros, pos_presentes
+            )
+            # Convertir a formato (F_j, M_j) para kpartir()
+            grupos_kpartir = []
+            for j in range(k):
+                fut_j = np.array(
+                    [int(self._indices_futuros[p]) for p in particion_futuros[j]],
+                    dtype=np.int8,
+                )
+                pres_j = np.array(
+                    [int(self._indices_presentes[p]) for p in presentes_por_grupo[j]],
+                    dtype=np.int8,
+                )
+                grupos_kpartir.append((fut_j, pres_j))
+
+            try:
+                dist = self.sia_subsistema.kpartir(grupos_kpartir).distribucion_marginal()
+                perdida = emd_efecto(dist, self.sia_dists_marginales)
+            except Exception as e:
+                self._logger.critic(f"  Candidato omitido: {e}")
+                continue
+
+            if perdida < mejor_perdida:
+                mejor_perdida = perdida
+                mejor_dist = dist
+                mejor_grupos = [
+                    tuple(
+                        [(EFFECT, int(self._indices_futuros[p])) for p in particion_futuros[j]]
+                        + [(ACTUAL, int(self._indices_presentes[p])) for p in presentes_por_grupo[j]]
+                    )
+                    for j in range(k)
+                ]
+
+        if mejor_grupos is None:
+            raise RuntimeError(
+                f"[Exhaustivo] Sin candidatos válidos para k={k}, M={self._m}"
+            )
+
+        self._logger.critic(f"[Exhaustivo] Terminado | φ_min={mejor_perdida:.6f}")
+        return mejor_grupos, mejor_perdida, mejor_dist  # type: ignore[return-value]
+
+    def _generar_k_particiones_indices(
+        self, indices: List[int], k: int
+    ) -> List[List[List[int]]]:
+        """
+        Genera todas las k-particiones de 'indices' usando el número de Stirling S(n,k).
+        Algoritmo recursivo: S(n,k) = k·S(n-1,k) + S(n-1,k-1).
+        """
+        if k == 1:
+            return [[list(indices)]]
+        if len(indices) == k:
+            return [[[x] for x in indices]]
+        if len(indices) < k or k < 1:
+            return []
+        primero = indices[0]
+        resto = indices[1:]
+        resultado: List[List[List[int]]] = []
+        # Caso A: primer elemento forma su propio grupo singleton
+        for p in self._generar_k_particiones_indices(resto, k - 1):
+            resultado.append([[primero]] + p)
+        # Caso B: primer elemento se une a un grupo existente
+        for p in self._generar_k_particiones_indices(resto, k):
+            for i in range(len(p)):
+                copia = [list(g) for g in p]
+                copia[i].append(primero)
+                resultado.append(copia)
+        return resultado
+
+    def _asignar_presentes_a_grupos(
+        self, particion_futuros: List[List[int]], pos_presentes: List[int]
+    ) -> List[List[int]]:
+        """
+        Asigna cada variable presente (por posición) al grupo de futuros
+        cuyo índice promedio sea más cercano (distancia de posición).
+        """
+        k = len(particion_futuros)
+        presentes_por_grupo: List[List[int]] = [[] for _ in range(k)]
+        promedios = [
+            float(np.mean(g)) if g else 0.0 for g in particion_futuros
+        ]
+        for p in pos_presentes:
+            distancias = [abs(p - prom) for prom in promedios]
+            j_asignado = int(np.argmin(distancias))
+            presentes_por_grupo[j_asignado].append(p)
+        return presentes_por_grupo
 
     # --------------------------------------------------------------
     # Evaluación final de la partición completa

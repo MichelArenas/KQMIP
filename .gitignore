@@ -55,3 +55,11 @@ dist/
 build/
 
 .log
+.logs/
+*.log
+.csv
+
+.claude/
+review/
+scratch/
+GeoMIP/data/samples/*.csv

@@ -60,6 +60,7 @@ class SIA(ABC):
         mecanismo: str,
         tpm: np.ndarray = None #! COMENTAR PARA UN SOLO ESTADO INICIAL
     ):
+        print("ENTRÉ A sia_preparar_subsistema", flush=True)
          # Dentro del método:
         if tpm is None:
             tpm = self.sia_cargar_tpm()   # o como cargues la TPM originalmente
@@ -114,7 +115,9 @@ class SIA(ABC):
         # self.sia_logger.debug(subsistema)
 
         self.sia_subsistema = subsistema
+        print("LLAMANDO distribucion_marginal")
         self.sia_dists_marginales = subsistema.distribucion_marginal()
+        print("RETORNÓ distribucion_marginal")
         self.sia_tiempo_inicio = time.time()
 
     def chequear_parametros(self, candidato: str, futuro: str, presente: str):

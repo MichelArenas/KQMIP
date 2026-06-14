@@ -1,0 +1,7 @@
+2026-06-13 19:57:00 [particion_q_strategy] CRITICAL Process-4: [ParticionadorQ] Iniciado | k=2 | vértices=19
+2026-06-13 19:57:02 [particion_q_strategy] CRITICAL Process-4:   Fase 1/1 | restantes=19
+2026-06-13 20:02:20 [particion_q_strategy] CRITICAL Process-4: [ParticionadorQ] Terminado | φ=0.004883 | grupos=2
+2026-06-13 20:02:29 [particion_q_strategy] CRITICAL Process-4: [ParticionadorQ] Iniciado | k=5 | vértices=19
+2026-06-13 20:02:30 [particion_q_strategy] CRITICAL Process-4:   Semilla incorporada | grupo tamaño=18
+2026-06-13 20:02:31 [particion_q_strategy] CRITICAL Process-4:   Fase 1/3 | restantes=1
+2026-06-13 20:02:34 [particion_q_strategy] CRITICAL Process-4: [ParticionadorQ] Terminado | φ=0.004883 | grupos=2

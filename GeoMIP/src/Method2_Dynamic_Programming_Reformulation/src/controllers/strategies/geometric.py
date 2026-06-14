@@ -47,7 +47,9 @@ class GeometricSIA(SIA):
         alcance: str,
         mecanismo: str,
         tpm: np.ndarray #! COMENTAR PARA UN SOLO ESTADO INICIAL
+        
     ):
+        print("ENTRÉ A aplicar_estrategia", flush=True)
         """ vamos a hacer que vaya desde el estado inicial hasta el final, bit a bit diferente, llenando la tabla primero para distancias hamming 1 hasta n, con n la cantidad de bits que cambian del estado inicial al final. para esto podemos usar una tabla de transiciones, donde cada fila es un estado y cada columna es un bit. la tabla de transiciones se llena con los estados que se pueden alcanzar desde el estado inicial, y luego se va llenando la tabla de distancias hamming. para esto vamos a usar una lista de listas, donde cada lista es una fila de la tabla de transiciones. la primera fila es el estado inicial, y las siguientes filas son los estados alcanzables desde el estado inicial. la última fila es el estado final.
         paso a paso
         1. cargar la matriz, pasar a ncubos
@@ -117,6 +119,10 @@ class GeometricSIA(SIA):
             futuros = self.sia_subsistema.indices_ncubos[futuros]
             dist =self.sia_subsistema.bipartir(futuros,presentes).distribucion_marginal()
             emd = emd_efecto(dist, self.sia_dists_marginales)
+            print(f"\n--- Candidato {idx} ---")
+            print("PRESENTES:", presentes)
+            print("FUTUROS:", futuros)
+            print("EMD:", emd)
             key = [(0,nodo) for nodo in presentes]
             key.extend([(1,nodo) for nodo in futuros])
             # print(fmt_biparte_q(list(key), self.nodes_complement(key)))

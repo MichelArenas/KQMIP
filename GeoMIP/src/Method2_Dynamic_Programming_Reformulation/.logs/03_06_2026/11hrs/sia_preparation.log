@@ -1,0 +1,10 @@
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Original creado.
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Original:
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Candidato creado.
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Subsistema creado.
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Construyendo tabla T para k-partición...
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Tabla T construida.
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Candidatos generados: 2
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Candidato 1/2: φ=0.024835
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Candidato 2/2: φ=0.030807
+2026-06-03 11:53:36 [sia_preparation] CRITICAL Process-17: Mejor pérdida: 0.024835 de 2 candidatos únicos evaluados.

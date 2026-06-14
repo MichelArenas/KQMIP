@@ -10,6 +10,7 @@ from src.models.base.application import aplicacion
 from src.constants.base import COLS_IDX
 
 
+
 class System:
     """
     La clase sistema es la encargada de realizar las operaciones de condicionamiento, substracción para generación de subsistemas y obtención de las distribuciones marginales para realizar eficientemente el cálculo de la EMD en el Efecto.
@@ -36,10 +37,19 @@ class System:
                 dims=np.array(range(n_nodes), dtype=np.int8),
                 data=tpm[:, i].reshape((2,) * n_nodes)
                 if notacion == Notation.LIL_ENDIAN.value
-                else tpm[:, i][reindexar(tpm[COLS_IDX])].reshape((2,) * n_nodes),
-            )
-            for i in range(n_nodes)
-        )
+                else tpm[:, i][reindexar(tpm[COLS_IDX])].reshape((2,) * n_nodes)
+                
+            )for i in range(n_nodes)
+              )
+        for i, ncube in enumerate(self.ncubos):
+            print(f"NCube original índice {i}: SUMA TOTAL = {np.sum(ncube.data):.6f}", flush=True)
+            print("MIN:", np.min(ncube.data))
+            print("MAX:", np.max(ncube.data))
+            print(f"NCUBE {ncube.indice} creado, suma={np.sum(ncube.data)}")
+            
+            
+        
+        
 
     @property
     def indices_ncubos(self):
@@ -304,6 +314,12 @@ class System:
             )
             for cubo in self.ncubos
         )
+        for cubo in nuevo.ncubos:
+            print(
+                cubo.indice,
+                cubo.dims,
+                #cubo.matriz.shape
+            )
         return nuevo
 
 
@@ -324,7 +340,7 @@ class System:
                 probabilidad = ncubo.data[seleccionar_subestado(sub_estado_inicial)]
             distribuciones[i] = 1 - probabilidad
         return distribuciones
-
+    
     def __str__(self) -> str:
         sub_dims = self.dims_ncubos
         cubes_info = [f"{c}" for c in self.ncubos]

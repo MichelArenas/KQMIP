@@ -129,7 +129,9 @@ class NCube:
 
             Se han agrupado los valores del n-cubo por promedio, dejando los remanentes en la dimension 0.
         """
-
+        #print("ANTES:", self.dims)
+        #print("SHAPE:", self.data.shape)
+        
         marginable_axis = np.intersect1d(ejes, self.dims)
         if not marginable_axis.size:
             return self
@@ -143,6 +145,9 @@ class NCube:
             [d for d in self.dims if d not in marginable_axis],
             dtype=np.int8,
         )
+       # print("dims originales:", self.dims)
+       # print("ejes a eliminar:", marginable_axis)
+       # print("ejes locales:", ejes_locales)
         return NCube(
             data=np.mean(self.data, axis=ejes_locales, keepdims=False),
             dims=new_dims,
@@ -153,6 +158,7 @@ class NCube:
         dims_str = f"dims={self.dims}"
         forma_str = f"shape={self.data.shape}"
         datos_str = str(self.data).replace("\n", "\n" + " " * 8)
+        
         return (
             f"NCube(index={self.indice}):\n"
             f"    {dims_str}\n"

@@ -1,0 +1,6 @@
+2026-06-13 22:47:24 [particion_q_strategy] CRITICAL Process-98: [ParticionadorQ] Iniciado | k=5 | vértices=10
+2026-06-13 22:47:24 [particion_q_strategy] CRITICAL Process-98:   Fase 1/4 | restantes=10
+2026-06-13 22:47:26 [particion_q_strategy] CRITICAL Process-98:   Fase 2/4 | restantes=4
+2026-06-13 22:47:26 [particion_q_strategy] CRITICAL Process-98:   Fase 3/4 | restantes=3
+2026-06-13 22:47:26 [particion_q_strategy] CRITICAL Process-98:   Fase 4/4 | restantes=2
+2026-06-13 22:47:26 [particion_q_strategy] CRITICAL Process-98: [ParticionadorQ] Terminado | φ=0.154297 | grupos=5

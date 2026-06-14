@@ -1,0 +1,4 @@
+2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [ParticionadorQ] Iniciado | k=5 | M=5 futuros | N=5 presentes
+2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [ParticionadorQ] → Modo EXHAUSTIVO (M=5 ≤ 7)
+2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [Exhaustivo] S(5,5) = 1 candidatos a evaluar
+2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [Exhaustivo] Terminado | φ_min=0.199219

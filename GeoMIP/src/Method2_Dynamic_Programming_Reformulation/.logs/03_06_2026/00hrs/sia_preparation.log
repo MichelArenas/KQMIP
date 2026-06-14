@@ -1,0 +1,10 @@
+2026-06-03 00:44:17 [sia_preparation] CRITICAL Process-21: Original creado.
+2026-06-03 00:44:17 [sia_preparation] CRITICAL Process-21: Original:
+2026-06-03 00:44:17 [sia_preparation] CRITICAL Process-21: Candidato creado.
+2026-06-03 00:44:17 [sia_preparation] CRITICAL Process-21: Subsistema creado.
+2026-06-03 00:44:17 [sia_preparation] CRITICAL Process-21: Construyendo tabla T para k-partición...
+2026-06-03 00:44:18 [sia_preparation] CRITICAL Process-21: Tabla T construida.
+2026-06-03 00:44:18 [sia_preparation] CRITICAL Process-21: Candidatos generados: 2
+2026-06-03 00:44:18 [sia_preparation] CRITICAL Process-21: Candidato 1/2: φ=nan
+2026-06-03 00:44:18 [sia_preparation] CRITICAL Process-21: Candidato 2/2: φ=nan
+2026-06-03 00:44:18 [sia_preparation] CRITICAL Process-21: Mejor pérdida: nan de 2 candidatos únicos evaluados.

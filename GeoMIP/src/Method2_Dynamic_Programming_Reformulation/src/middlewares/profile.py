@@ -97,6 +97,8 @@ class ProfilerContext:
 
 # Instancia global del gestor
 profiler_manager = ProfilingManager()
+# Alias para compatibilidad con QNodes (q_nodes_k.py importa este nombre)
+gestor_perfilado = profiler_manager
 
 
 def profile(name: Optional[str] = None, context: Optional[dict] = None) -> Callable:

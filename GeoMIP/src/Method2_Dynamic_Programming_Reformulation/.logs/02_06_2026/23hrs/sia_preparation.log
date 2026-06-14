@@ -1,0 +1,12 @@
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Original creado.
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Original:
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Candidato creado.
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Subsistema creado.
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Construyendo tabla T para k-partición...
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Tabla T construida.
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Candidatos generados: 5
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Candidato 1 omitido: 'NCube' object has no attribute 'matriz'
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Candidato 2 omitido: 'NCube' object has no attribute 'matriz'
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Candidato 3 omitido: 'NCube' object has no attribute 'matriz'
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Candidato 4 omitido: 'NCube' object has no attribute 'matriz'
+2026-06-02 23:59:59 [sia_preparation] CRITICAL Process-5: Candidato 5 omitido: 'NCube' object has no attribute 'matriz'

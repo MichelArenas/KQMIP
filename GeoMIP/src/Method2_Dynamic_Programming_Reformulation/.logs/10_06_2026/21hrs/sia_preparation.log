@@ -1,0 +1,62 @@
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Original creado.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Original:
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato creado.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Subsistema creado.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: empieza.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Original creado.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Original:
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato creado.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Subsistema creado.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Construyendo tabla T para k-partición...
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Tabla T construida.
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidatos generados: 48
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Evaluando todos los 48 candidatos (exhaustivo).
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 1/48: φ=4.800781
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 2/48: φ=4.804688
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 3/48: φ=4.804688
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 4/48: φ=4.802734
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 5/48: φ=4.798828
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 6/48: φ=4.998047
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 7/48: φ=4.804688
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 8/48: φ=4.890625
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 9/48: φ=4.843750
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 10/48: φ=4.951172
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 11/48: φ=5.029297
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 12/48: φ=5.046875
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 13/48: φ=4.916016
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 14/48: φ=4.951172
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 15/48: φ=5.015625
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 16/48: φ=5.109375
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 17/48: φ=5.093750
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 18/48: φ=4.794922
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 19/48: φ=4.794922
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 20/48: φ=4.953125
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 21/48: φ=4.925781
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 22/48: φ=5.019531
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 23/48: φ=4.769531
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 24/48: φ=4.800781
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 25/48: φ=4.988281
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 26/48: φ=5.093750
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 27/48: φ=4.806641
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 28/48: φ=4.896484
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 29/48: φ=4.841797
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 30/48: φ=4.953125
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 31/48: φ=5.109375
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 32/48: φ=4.955078
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 33/48: φ=4.990234
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 34/48: φ=5.050781
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 35/48: φ=5.007812
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 36/48: φ=4.769531
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 37/48: φ=4.613281
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 38/48: φ=4.613281
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 39/48: φ=4.769531
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 40/48: φ=4.621094
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 41/48: φ=4.892578
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 42/48: φ=4.939453
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 43/48: φ=4.851562
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 44/48: φ=5.000000
+2026-06-10 21:17:03 [sia_preparation] CRITICAL MainProcess: Candidato 45/48: φ=4.654297
+2026-06-10 21:17:04 [sia_preparation] CRITICAL MainProcess: Candidato 46/48: φ=4.769531
+2026-06-10 21:17:04 [sia_preparation] CRITICAL MainProcess: Candidato 47/48: φ=4.869141
+2026-06-10 21:17:04 [sia_preparation] CRITICAL MainProcess: Candidato 48/48: φ=4.726562
+2026-06-10 21:17:04 [sia_preparation] CRITICAL MainProcess: Mejor pérdida: 4.613281 de 45 candidatos únicos evaluados.

@@ -1,0 +1,10 @@
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Original creado.
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Original:
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Candidato creado.
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Subsistema creado.
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Construyendo tabla T para k-partición...
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Tabla T construida.
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Candidatos generados: 2
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Candidato 6/2: φ=0.026394
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Candidato 6/2: φ=0.019721
+2026-06-03 12:43:13 [sia_preparation] CRITICAL Process-50: Mejor pérdida: 0.019721 de 2 candidatos únicos evaluados.

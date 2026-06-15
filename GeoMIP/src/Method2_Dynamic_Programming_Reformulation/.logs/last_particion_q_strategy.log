@@ -1,4 +1,7 @@
-2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [ParticionadorQ] Iniciado | k=5 | M=5 futuros | N=5 presentes
-2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [ParticionadorQ] → Modo EXHAUSTIVO (M=5 ≤ 7)
-2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [Exhaustivo] S(5,5) = 1 candidatos a evaluar
-2026-06-13 23:42:21 [particion_q_strategy] CRITICAL Process-98: [Exhaustivo] Terminado | φ_min=0.199219
+2026-06-14 20:00:29 [particion_q_strategy] CRITICAL Process-100: [ParticionadorQ] Iniciado | k=5 | M=12 futuros | N=14 presentes
+2026-06-14 20:00:29 [particion_q_strategy] CRITICAL Process-100: [ParticionadorQ] → Modo GREEDY (M=12 > 7)
+2026-06-14 20:00:29 [particion_q_strategy] CRITICAL Process-100:   Fase 1/4 | restantes=26
+2026-06-14 20:00:29 [particion_q_strategy] CRITICAL Process-100:   Fase 2/4 | restantes=25
+2026-06-14 20:00:32 [particion_q_strategy] CRITICAL Process-100:   Fase 3/4 | restantes=24
+2026-06-14 20:00:37 [particion_q_strategy] CRITICAL Process-100:   Fase 4/4 | restantes=23
+2026-06-14 20:00:41 [particion_q_strategy] CRITICAL Process-100: [ParticionadorQ] Terminado | φ=0.183964 | grupos=5

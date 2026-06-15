@@ -1,5 +1,6 @@
 import sys
 import os
+os.environ["PYTHONIOENCODING"] = "utf-8"
 from pathlib import Path
 import multiprocessing
 import numpy as np

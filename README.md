@@ -17,6 +17,12 @@ Instalacion de `uv` (si no lo tienes):
 pip install uv
 ```
 
+Verifica instalación:
+```bash
+uv --version
+```
+
+
 ## Estructura Rapida
 
 - `QNodes/`: ejecucion directa de un caso de prueba (`exec.py`).
@@ -25,14 +31,24 @@ pip install uv
 - `GeoMIP/data/samples/`: datasets TPM `N*.csv` usados por Method1/Method2.
 - `GeoMIP/results/`: archivos Excel de entrada/salida para Method1/Method2.
 
-## 1) Ejecutar QNodes
+## 1 Ejecutar QNodes
 
 ### Dependencias
 
-Desde `QNodes/`:
+Desde `KQNodes/`:
 
 ```bash
-cd QNodes
+cd kQNodes
+```
+
+CRea el entorno virtual usando Python 3.11:
+
+```bash
+uv venv --python 3.11
+```
+
+Instalar depenencias:
+```bash
 uv sync
 ```
 
@@ -40,6 +56,10 @@ uv sync
 
 ```bash
 uv run exec.py
+```
+o 
+```bash
+pip exec.py
 ```
 
 ### Que hace

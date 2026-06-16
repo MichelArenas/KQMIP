@@ -11,8 +11,8 @@ from flask import Flask, request, jsonify, send_from_directory
 app = Flask(__name__, static_folder='web', static_url_path='')
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-QNODES_ROOT = PROJECT_ROOT / "QNodes"
-METHOD2_ROOT = PROJECT_ROOT / "GeoMIP" / "src" / "Method2_Dynamic_Programming_Reformulation"
+QNODES_ROOT = PROJECT_ROOT / "KQNodes"
+METHOD2_ROOT = PROJECT_ROOT / "KGeoMIP" / "src" / "Method2_Dynamic_Programming_Reformulation"
 
 def worker_qnodes(estado_ini, condicion, alcance, mecanismo, tpm, k, queue):
     # Setup path
